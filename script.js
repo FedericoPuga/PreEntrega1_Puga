@@ -1,6 +1,5 @@
-/* login */
-
-let edad = 0;
+/* ---------------------------------- login -------------------------------------- */
+ let edad = 0;
 do {
     edad = prompt("ingresar edad");
     if (edad <= 18 ){
@@ -21,24 +20,25 @@ else {
 }
 } while (nombreUsuario == ""); 
 
-/* pago de impuestos */
-  
-const suma  = (monto1,monto2) => monto1 + monto2
-const resta = (monto1,monto2) => monto1 - monto2
-const iva   = x => x * 0.21
+/* ---------------------------------- productos-------------------------------------- */
 
-let servicio1 = prompt ("Nombre del 1er servicio que desea abonar")
-let monto1 = Number(prompt ("Ingrese el valor del 1er servicio") )
+class bebidas{
+    constructor (producto, precio, marca) {
+        this.producto = producto;
+        this.precio = precio;
+        this.marca = marca;
+    }
+}
 
-let servicio2 = prompt ("Nombre del 2do servicio que desea abonar")
-let monto2 = Number(prompt ("Ingrese el valor del 2do servicio") )
+let fernet = new bebidas("fernet", 500, "branca");
+let gin = new bebidas("gin", 600, "bombai"); 
+let vodka = new bebidas("vodka", 400, "absolut");
 
-alert("Los servicios que desea pagar son: "+servicio1+ " y "+servicio2)
+const productos = [];
+productos.push (fernet);
+productos.push (gin); 
+productos.push (vodka);
 
-let descuento = 100
-let subtotal1 = resta(suma(monto1, iva(monto1)), descuento)
-let subtotal2 = resta(suma(monto2, iva(monto2)), descuento)
-let total = resta(suma(monto1,monto2, iva(monto1,monto2)), descuento) 
-alert("El total de "+servicio1+" es: "+subtotal1+"."+" El total de "+servicio2+" es: "+subtotal2)
-alert("El total con IVA y descuento incluido es: "+total) 
-alert("PAGO REALIZADO CON ÉXITO")
+/* ---------------------------------- carrito -------------------------------------- */
+const carrito = []; 
+carrito.push(gin); 
